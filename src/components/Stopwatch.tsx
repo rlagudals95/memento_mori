@@ -18,16 +18,6 @@ const Stopwatch = () => (
           <p>
             Formatted: { formatted }
           </p>
-              
-          {/* <p>
-            Hours: { hours }
-          </p>
-          <p>
-            Minutes: { minutes }
-          </p>
-          <p>
-            Seconds: { seconds }
-          </p> */}
         </Timewrap>
       );
     }}

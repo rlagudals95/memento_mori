@@ -1,21 +1,27 @@
 import React, { useState, useEffect}from 'react'
 import styled from "styled-components"
+import PropTypes from "prop-types";
+
+Countdown.propTypes = {
+  mm: PropTypes.number,
+  hh: PropTypes.number,
+};
 
 function Countdown({ mm, hh }) {
     
-    const [minutes, setMinutes] = useState(mm);
-    const [seconds, setSeconds] = useState(hh);
+    const [minutes, setMinutes] = useState<number>(mm);
+    const [seconds, setSeconds] = useState<number>(hh);
 
     useEffect(() => {
     const countdown = setInterval(() => {
-            if (parseInt(seconds) > 0) {
-            setSeconds(parseInt(seconds) - 1);
+            if (seconds > 0) {
+            setSeconds(seconds - 1);
             }
-            if (parseInt(seconds) === 0) {
-            if (parseInt(minutes) === 0) {
+            if (seconds === 0) {
+            if (minutes === 0) {
                 clearInterval(countdown);
             } else {
-                setMinutes(parseInt(minutes) - 1);
+                setMinutes(minutes - 1);
                 setSeconds(59);
             }
         }
